@@ -1,0 +1,101 @@
+# Task 01
+
+x = "Your name"
+print("Hi " + x + "! Nice to meet you!")
+print ("Welcome to the Programing Course!")
+
+
+# Task 02
+
+y = "YourWord"
+n = len(y)
+
+for i in y[ : :-1]:
+    print(i, end =' ')
+    
+# https://www.geeksforgeeks.org/iterate-over-characters-of-a-string-in-python/
+
+
+# Task 03
+
+x = 9.3
+
+import math
+x = math.ceil(x)
+
+F0 = 0
+F1 = 1
+
+while F1 < x:
+  if F0 == 0: print(0, end = ', ')
+  if F0+F1 < x: print(F1, end = ', ')
+  else: print(F1, end = '. ')
+  F0,F1 = F1,F0+F1
+
+# https://www.youtube.com/watch?v=MxQ9_pg0TKA
+
+
+
+# Task 04
+
+x = 9.3
+
+#import math
+x = math.ceil(x)
+print(0, end = '')
+
+for i in range(0,x):
+    if (round(i/3,0) == i/3):
+        continue
+    print(", "+ str(i), end ='')
+    i += 1
+    
+print(".")
+
+
+
+
+
+# Task 05
+
+import statistics
+
+a = 0
+b = 0
+c = 0
+
+def triangle(a,b,c):
+    a = float(input("Give the lenght of the first side of the triangle: "))
+    b = float(input("Give the lenght of the second side of the triangle: "))
+    c = float(input("Give the lenght of the third side of the triangle: "))
+    data=[a,b,c]
+    z = max(data)
+    x = min(data)
+    y = statistics.median(data)
+    if z >= x + y or min(data) <= 0: 
+        print("Invalid! Please use different numbers.")
+        triangle(a,b,c)
+
+    print()
+    if  a == b == c: print("Your triangle is equilateral!")
+    if  a == b or a == c or b == c: print("Your triangle is isosceles!") 
+    if  a != b and a != c and b != c: print("Your triangle is scalene!") 
+    
+triangle(a,b,c)
+
+
+
+
+
+# Task 06
+
+x = 0
+
+def octal_transformation(x):
+    x = int(input("Provide the number you want to transfrom from decimal to octal: "))
+    oct_trans = oct(x)
+    l = len(oct_trans)
+    result = oct_trans[2:l]
+    print(result)
+    
+octal_transformation(x)
